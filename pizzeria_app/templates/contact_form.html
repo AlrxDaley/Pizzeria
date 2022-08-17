@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container bg-opacity form_bg">
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{form.first_name | as_crispy_field}}
+      </div>
+      <div class="col-6">
+        {{form.last_name|as_crispy_field}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        {{form.email_address|as_crispy_field}}
+      </div>    
+      <div class="col-6">
+        {{form.subject|as_crispy_field}}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        {{form.message|as_crispy_field}}
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="form-group">
+        <button type="submit" class="btn-primary btn-block">Submit</button> 
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}

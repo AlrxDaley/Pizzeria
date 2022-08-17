@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{ form.media }}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script src="https://kit.fontawesome.com/0c1ca09b2f.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.min.js" integrity="sha256-VBLiveTKyUZMEzJd6z2mhfxIqz3ZATCuVMawPZGzIfA=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/js/tempusdominus-bootstrap-4.min.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.38.0/css/tempusdominus-bootstrap-4.min.css" crossorigin="anonymous" />
+    <title>Giuseppes Pizzeria</title>
+</head>
+<body>
+    <div class="container-fluid bg-opacity">
+        <div class="row">
+            <ul class="navbar nav-pills sticky-top navbar-light nav-justified">
+                <a href="{% url 'index'%}" class="nav-item nav-link red "><i class="fas fa-home"> Home</i></a>
+                <a href="{% url 'booking_options' %}" class="nav-item nav-link red"><i class="fas fa-calendar"> Booking</i></a>
+                <a href="{% url 'contact' %}" class="nav-item nav-link red"><i class="fas fa-address-book"> Contact</i></a>
+                <a href="#" class="nav-item nav-link red"><i class="fas fa-newspaper"> Menu</i></a>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <img class="title-background" src="https://res.cloudinary.com/dkpchnxiu/image/upload/v1647344787/GiuseppesImages/title_background_ym4hwo.png" alt="italian flag styled background">
+            <h1 class="centered title">Giuseppes Pizzeria</h1>
+        </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+<footer>
+    <div class="container-fluid flex-fill">
+        <div class="row bg-opacity">
+            <nav class="navbar navbar-light social">
+                <a href="#" class="nav-item nav-link"><i class="fab fa-facebook"> Facebook</i></a>
+                <a href="#" class="nav-item nav-link"><i class="fab fa-instagram"> Instagram</i></a>
+                <a href="#" class="nav-item nav-link"><i class="fab fa-linkedin"> Linkedin</i></a>
+                <a href="#" class="nav-item nav-link"><i class="fab fa-pinterest"></i> Pinterest</a>
+            </nav>
+        </div>
+    </div>
+</footer>
+</html>
