@@ -49,11 +49,12 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_summernote',
-    'tableapp',
+    'table_app',
     'phone_field',
     'phonenumber_field',
     'static',
     'tempus_dominus',
+    'pizzeria_app',
     
 ]
 
@@ -67,7 +68,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pizzeria.urls'
+ROOT_URLCONF = 'pizzeria_app.urls'
 
 TEMPLATES = [
     {
@@ -85,7 +86,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'pizzeria.wsgi.application'
+WSGI_APPLICATION = 'pizzeria_app.wsgi.application'
 
 
 # Database
