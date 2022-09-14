@@ -1,3 +1,4 @@
+from pyexpat import model
 from django import forms
 from django.forms import ModelForm
 from django import forms
@@ -10,7 +11,7 @@ class TimeInput(forms.DateTimeInput):
     input_type = 'time'
 
 class booking_form(ModelForm):
-    
+
     class Meta:
         model = booking
         fields = '__all__'
@@ -32,3 +33,5 @@ class ContactForm(forms.Form):
     email_address = forms.EmailField(max_length = 150)
     subject = forms.CharField(max_length = 50)
     message = forms.CharField(widget = forms.Textarea, max_length = 2000)
+    
+

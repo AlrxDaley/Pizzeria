@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load crispy_forms_tags %}
+{{ form.media }}
+
+{% block content %}
+<div class="container bg-opacity form_bg">
+    <form action="#" method="get">
+        <div class="row">
+            <input type="text" name="reference_search">
+            <input type="submit" class="btn" value="reference_search" name="MyBtn">
+        </div>
+    </form>
+  </div>
+
+
+{% endblock %}

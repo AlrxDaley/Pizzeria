@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from random import randint
 
 class booking(models.Model):
     first_name = models.CharField(max_length=50)
@@ -9,7 +10,8 @@ class booking(models.Model):
     number_of_guests = models.IntegerField()
     phone_number = models.CharField(max_length=1024)
     special_request = models.TextField(blank=True, max_length=1024)
-    
+    booking_reference = models.CharField(max_length=50)
+
     class Meta:
         ordering = ['-last_name']
         

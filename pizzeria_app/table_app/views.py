@@ -1,7 +1,13 @@
+from concurrent.futures.process import _python_exit
+from pyexpat import model
 from django.core.mail import send_mail, BadHeaderError
-from django.shortcuts import redirect, render , HttpResponse
+from django.shortcuts import redirect, render , HttpResponse, HttpResponseRedirect
+from django.views.generic import TemplateView
 from .models import booking
 from .forms import booking_form, ContactForm
+from django.template import loader
+from django.urls import reverse
+
 
 # Create your views here.
 def index(request):
@@ -13,26 +19,49 @@ def booking_options(request):
 def table_booking(request):
     
     form = booking_form()
+    reference = booking.booking_reference
     
     if request.method == 'POST':
         form = booking_form(request.POST)
-        
         if form.is_valid():
+            try:
+                send_mail('Booking reference',reference,'alexander_daley@icloud.com', ['alexander_daley@icloud.com'])
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
             form.save()
             return redirect('index')
+
         
     context = {'form':form}
     return render(request, 'booking_form.html', context)
 
-def update_booking(request, id):
+
+def booking_search(request):
+    if (request.GET.get('MyBtn')):
+        return update_booking(request,request.GET.get('reference_search'))
+        
+    return render(request, 'booking_search.html')
+
+def update_booking(request,booking_reference):
+	booking_details = booking.objects.get(booking_reference=booking_reference)
+	template = loader.get_template('update_booking.html')
+	context={
+		'booking': booking_details, 
+		}
+	return HttpResponse(template.render(context, request))
     
-    bookings = booking.objects.get(id = id)
-    form = booking_form(instance=bookings)
-        
-    context = {'form':form}
-    return render(request, 'booking_form.html', context)
+def update_record(request, booking_ref):
+    booking_details = booking.objects.get(booking_reference=booking_ref)
+    
+    booking_details.first_name = request.POST['first_name']
+    booking_details.last_name = request.POST['last_name']
+    booking_details.booking_date = request.POST['booking_date']
+    booking_details.booking_ToD = request.POST['booking_ToD']
+    booking_details.number_of_guests = request.POST['number_of_guests']
+    booking_details.phone_number = request.POST['phone_number']
 
-
+    booking_details.save()
+    return HttpResponseRedirect(reverse('index'))
 
 def contact(request):
 	if request.method == 'POST':
