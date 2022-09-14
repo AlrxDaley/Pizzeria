@@ -54,6 +54,7 @@ def update_record(request, booking_ref):
     booking_details = booking.objects.get(booking_reference=booking_ref)
     
     booking_details.first_name = request.POST['first_name']
+    print(booking_details.first_name)
     booking_details.last_name = request.POST['last_name']
     booking_details.booking_date = request.POST['booking_date']
     booking_details.booking_ToD = request.POST['booking_ToD']
@@ -61,7 +62,12 @@ def update_record(request, booking_ref):
     booking_details.phone_number = request.POST['phone_number']
 
     booking_details.save()
-    return HttpResponseRedirect(reverse('index'))
+    
+    context = {
+        'booking' : booking_details
+    }
+    
+    return HttpResponseRedirect(reverse('index'), context )
 
 def contact(request):
 	if request.method == 'POST':

@@ -7,36 +7,39 @@
 <div class="container bg-opacity form_bg">
   <form action="update_record/{{ booking.booking_reference }}" method="post">
       {% csrf_token %}
-      <div class="row">
-        <div class="col-6">
-          {{booking.booking_reference}}
+      <div class="form-group">
+        <div class="row">
+          <div class="col-6">
+            <label for="first_name">First Name:</label>
+            <input name="first_name" id="first_name" type="text" class="form-control" value="{{booking.first_name}}">
+          </div>
+          <div class="col-6">
+            <label for="last_name">Last Name:</label>
+            <input name="last_name" id="last_name" type="text" class="form-control" value="{{booking.last_name}}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="first_name">Booking Date:</label>
+            <input name="booking_date" type="date" class="form-control" value="{{booking.booking_date}}">
+          </div>
+          <div class="col">
+            <label for="first_name">Time Of Day:</label>
+            <input name="booking_ToD" type="time" class="form-control" value="{{booking.booking_ToD}}">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <label for="first_name">Number Of Guests:</label>
+            <input name="number_of_guests" type="text" class="form-control" value="{{booking.number_of_guests}}">
+          </div>
+          <div class="col">
+            <label for="first_name">Phone Number:</label>
+            <input name="phone_number" type="text" class="form-control" value="{{booking.phone_number}}">
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-6">
-          <input name="first_name" type="text" value="{{booking.first_name}}">
-        </div>
-        <div class="col-6">
-          <input name="last_name" type="text" value="{{booking.last_name}}">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <input name="booking_date" type="date" value="{{booking.booking_date}}">
-        </div>
-        <div class="col-8">
-          <input name="booking_ToD" type="time" value="{{booking.booking_ToD}}">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col">
-          <input name="number_of_guests" type="text" value="{{booking.number_of_guests}}">
-        </div>
-        <div class="col">
-          <input name="phone_number" type="text" value="{{booking.phone_number}}">
-        </div>
-      </div>
-      <input type="submit" value="Submit">
+      <input type="submit" class="btn-primary btn-block" value="Submit">
   </form>
 </div>
 

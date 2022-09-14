@@ -9,6 +9,8 @@ to create a booking. It also allows the user to view an online menu so they can 
 
 ## Getting Started
 
+## Testing
+
 ### Dependencies
 
 All the dependencies can be fount in the "requirements.txt" file.
