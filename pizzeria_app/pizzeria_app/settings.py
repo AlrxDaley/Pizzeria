@@ -146,5 +146,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+DATE_INPUT_FORMATS = ("%d/%m/%Y",) 
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

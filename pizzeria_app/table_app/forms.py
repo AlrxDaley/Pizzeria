@@ -16,7 +16,7 @@ class booking_form(ModelForm):
         model = booking
         fields = '__all__'
         widgets = {
-            'booking_date': DateInput(),
+            'booking_date': DateInput(format = '%d/%m/%Y',),
             'booking_Tod': TimeInput(),
         }
         
