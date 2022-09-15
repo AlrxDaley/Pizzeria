@@ -1,1 +1,1 @@
-web: gunicorn pizzeria_app:application
+web: gunicorn pizzeria_app:manage.py
