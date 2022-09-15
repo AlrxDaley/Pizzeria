@@ -1,1 +1,1 @@
-web: gunicorn pizzeria_app:pizzeria_app
+web: gunicorn pizzeria_app:application
