@@ -1,1 +1,1 @@
-web: gunicorn pizzeria_app:manage.py runserver
+web: gunicorn pizzeria_app:runserver
