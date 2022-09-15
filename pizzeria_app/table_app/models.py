@@ -4,7 +4,7 @@ from random import randint
 
 
 class booking(models.Model):
-    first_name = models.CharField("First Name", max_length=50)
+    first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     booking_date = models.DateField(max_length=255, blank=True, null=True)
     booking_ToD = models.TimeField(max_length=255, blank=True, null=True)
