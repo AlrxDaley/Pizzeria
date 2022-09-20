@@ -1,1 +1,1 @@
-web: gunicorn pizzeria.pizzeria_app.wsgi
+web: gunicorn pizzeria_app.pizzeria_app.wsgi
