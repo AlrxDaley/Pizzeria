@@ -1,1 +1,1 @@
-web: gunicorn pizzeria_app.wsgi --log-file -
+web: gunicorn --pythonpath pizzeria_app pizzeria_app.wsgi --log-file -
