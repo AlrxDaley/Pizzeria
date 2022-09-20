@@ -50,10 +50,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "django_summernote",
     "table_app",
-    "phone_field",
-    "phonenumber_field",
     "static",
-    "tempus_dominus",
     "pizzeria_app",
 ]
 
