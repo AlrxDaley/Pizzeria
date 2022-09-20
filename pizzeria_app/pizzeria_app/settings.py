@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     "table_app",
     "static",
     "pizzeria_app",
+    "whitenoise",
 ]
 
 MIDDLEWARE = [
