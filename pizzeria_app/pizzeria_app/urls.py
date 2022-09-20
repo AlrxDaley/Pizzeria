@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.urls import path
 from table_app.views import index, table_booking, add_booking, booking_options, contact, booking_search_update, update_booking, delete_booking, booking_search_delete
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 
 urlpatterns = [
@@ -15,3 +16,5 @@ urlpatterns = [
     path('booking_search_delete/', booking_search_delete, name='booking_search_delete'),
     path('delete_booking/<str:booking_ref>', delete_booking, name='delete_booking'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
