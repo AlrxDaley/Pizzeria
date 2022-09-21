@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica&display=swap');
+
+body{
+    background-image:url('https://res.cloudinary.com/dkpchnxiu/image/upload/v1647356604/GiuseppesImages/background_image_dgivc7.jpg') ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Title css */
+.title-background{
+    width: 100%;
+    margin: auto;
+    margin-top: 2vh;
+}
+
+.container{
+    position: relative;
+    text-align: center;
+    color: black;
+}
+
+.centered{
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 70%;
+    font-size-adjust: calc();
+}
+
+.title{
+    margin-top: 1vh;
+    font-size: 6vw;
+    font-family: 'IM Fell DW Pica', serif;
+}
+
+/* Navbar css */
+
+.navbar a{
+    color: black;
+    font-size: 20px;
+}
+
+.navbar{
+    width: 100%;
+    height: 60px;
+}
+
+.red:hover{
+    color: red;
+    outline: 1px solid red;
+}
+
+.bg-opacity{
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.bg-opacity-contact{
+    background: rgba(255, 255, 255, 1);
+}
+
+img{
+    width: 100%;
+}
+
+/* footer css */
+
+footer{
+    padding-top: 5vh;
+}
+
+/* menu banner css */
+.banner{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.form_bg{
+    margin-top: 10px;
+}
+
+.booking_options{
+    margin-top: 23.5vh;
+    margin-bottom: 23.5vh;
+}
